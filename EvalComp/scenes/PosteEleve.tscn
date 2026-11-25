@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/classroom/Hotspot.gd" id="1_hs"]
+[ext_resource type="ArrayMesh" path="res://assets/models/kenney/desk.obj" id="m_desk"]
+[ext_resource type="ArrayMesh" path="res://assets/models/kenney/chairDesk.obj" id="m_chair"]
+
+[sub_resource type="BoxShape3D" id="DeskShape"]
+size = Vector3(1.4, 0.8, 0.9)
+
+[node name="PosteEleve" type="Area3D"]
+script = ExtResource("1_hs")
+
+[node name="Desk" type="MeshInstance3D" parent="."]
+mesh = ExtResource("m_desk")
+position = Vector3(0.7144754, 0, -0.6677)
+scale = Vector3(0.2, 0.2, 0.2)
+
+[node name="Chair" type="MeshInstance3D" parent="."]
+mesh = ExtResource("m_chair")
+position = Vector3(-0.33495, 0, 0.8643)
+rotation_degrees = Vector3(0, 180, 0)
+scale = Vector3(0.2, 0.2, 0.2)
+
+[node name="DeskBody" type="StaticBody3D" parent="."]
+position = Vector3(0, 0.4, -0.3)
+
+[node name="DeskCollision" type="CollisionShape3D" parent="DeskBody"]
+shape = SubResource("DeskShape")

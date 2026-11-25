@@ -1,0 +1,42 @@
+EVALCOMP — PROJET CORRIGÉ
+
+1. Décompresser ce ZIP dans un NOUVEAU dossier.
+2. Dans Godot, importer le project.godot de CE dossier.
+3. Attendre la réimportation des ressources puis lancer avec F6 interdit pour ce contrôle : utiliser F5 (projet complet).
+4. Ne pas remplacer ce project.godot par l'ancien fichier séparé : il rétablirait la résolution 480 × 270.
+5. Ne pas exécuter les anciens générateurs du dossier tools sans adaptation : ils peuvent réécrire les scènes corrigées.
+
+CORRECTIONS
+- Résolution interne 1280 × 720 avec mise à l'échelle fractionnaire.
+- Menu restructuré avec des conteneurs ; paramètres centrés.
+- Dialogue agrandi, contenu et retour pédagogique défilants, pied de panneau accessible.
+- Réponses désactivées après validation, retour focalisé, sauvegarde immédiate.
+- Préservation du nom de l'élève et de la position du professeur entre les scènes.
+- Protection contre plusieurs interactions simultanées.
+- Retrait d'un accès invalide à modulate sur un Node3D en fin de parcours.
+- Chaises centrées selon les dimensions réelles des modèles OBJ.
+- Pose assise existante arrêtée et bassin aligné sur le siège ; contrôle visuel requis.
+- Caméra fixe recadrée, murs masquants cachés, tableau repositionné.
+- Ajout de cahiers, trousses, fenêtres et affiches ; palette harmonisée.
+- Bilan final reformulé : terminer le jeu ne prouve pas la maîtrise professionnelle.
+
+VÉRIFICATIONS EFFECTUÉES
+Godot 4.5.1, mode sans affichage graphique (le projet fourni annonce 4.7).
+- Import des ressources et chargement des scènes.
+- 45 ouvertures : 15 dialogues × 3 tailles de fenêtre (1280×720, 1440×810, 1920×1080).
+- Panneaux et boutons de retour dans les limites du viewport.
+- Retours pédagogiques présents ; doubles réponses sans points supplémentaires.
+- Sauvegarde et chargement du score.
+- Paramètres accessibles ; 20 élèves ; chaises centrées latéralement.
+- Caméra immobile lorsque le professeur change de position.
+- Trois cycles réponse / retour en classe / déplacement, réussis.
+
+LIMITES
+Le blocage initial n'a pas été reproduit sur l'ancien projet ; aucune cause unique de gel n'est affirmée. Les parcours corrigés passent les tests.
+L'environnement n'a pas permis de lancer un affichage graphique. Les poses, les ombres, le cadrage et l'esthétique doivent donc être contrôlés visuellement dans votre Godot.
+Les contrôles de rectangles ne constituent pas une lecture visuelle de chaque phrase.
+
+TESTS FOURNIS
+Godot --headless --path CHEMIN_DU_PROJET res://tests/Regression.tscn
+Godot --headless --path CHEMIN_DU_PROJET res://tests/Transitions.tscn
+Attention : ces tests écrivent la sauvegarde locale du jeu. Les exécuter dans un profil de test si vous voulez conserver une partie.
